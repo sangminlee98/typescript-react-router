@@ -1,5 +1,6 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router';
+import WithRouterSample from './WithRouterSample';
 
 type Data = {
   velopert: {name: string, description: string},
@@ -28,6 +29,7 @@ const Profile = ({match}: RouteComponentProps<MatchParams>) => {
         {username}({profile.name})
       </h3>
       <p>{profile.description}</p>
+      <WithRouterSample/>
     </div>
   );
 };
