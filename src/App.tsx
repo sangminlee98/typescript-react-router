@@ -1,4 +1,4 @@
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './components/About';
 import Home from './components/Home';
@@ -13,9 +13,11 @@ const App = () => {
         <li><Link to='/profile/velopert'>velopert 프로필</Link></li>
         <li><Link to='/profile/gildong'>gildong 프로필</Link></li>
       </ul>
-      <Route path="/" exact component={Home}/>
-      <Route path={['/about', '/info']} component={About}/>
-      <Route path='/profile/:username' component={Profile}/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/profile/:username' element={<Profile/>}/>
+      </Routes>
     </div>
   );
 }
